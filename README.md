@@ -1,7 +1,7 @@
 # 10Projects
 
 ## Inspiration for doing these projects - [Florin Pop](https://github.com/florinpop17)
-### Youtube Link for the video - [10 JavaScript Projects in 10 Hours - Coding Challenge 🔥](https://www.youtube.com/watch?v=dtKciwk_si4&t=20430s)
+### Youtube Link for the challange video - [10 JavaScript Projects in 10 Hours - Coding Challenge 🔥](https://www.youtube.com/watch?v=dtKciwk_si4&t=20430s)
 
 1. Countdown Timer App
   - Timer till coming new year

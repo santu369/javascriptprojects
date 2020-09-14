@@ -7,6 +7,6 @@
   - Timer till coming new year
   - Timer will change to next year if current year completes
   
-1. Quiz App
+2. Quiz App
   - Uses API to fetch 5 random questions and options
   - Displays your score at the end with restart option

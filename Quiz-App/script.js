@@ -81,8 +81,13 @@ function showQuiz(quiz) {
     i++;
 }
 
-function quizCompleted () {
-
+function showScore () {
+    finishEl.innerText = "Your Score";
+    finishEl.classList.add("finish");
+    titleEl.appendChild(finishEl);
+    scoreEl.innerText = score + "/" + QUIZLENGTH;
+    scoreEl.classList.add("score");
+    titleEl.appendChild(scoreEl);
 }
 
 randomOptions = getRandomNumbersArray(OPTIONSCOUNT,OPTIONSCOUNT);
@@ -95,9 +100,9 @@ submitButtonEl.addEventListener('click', (e) => {
     if (document.querySelector('input[name="option"]:checked')) {
         e.preventDefault();
         let selectedOption = document.querySelector('input[name="option"]:checked').value;
-        console.log("Question: " + quizData[i-1].question);
-        console.log("Selected Option: " + selectedOption);
-        console.log("Correct Option: " + quizData[i-1].correct_answer);
+        // console.log("Question: " + quizData[i-1].question);
+        // console.log("Selected Option: " + selectedOption);
+        // console.log("Correct Option: " + quizData[i-1].correct_answer);
         if(i < 5) {
             if(selectedOption === quizData[i-1].correct_answer) {
                 score++;
@@ -110,13 +115,7 @@ submitButtonEl.addEventListener('click', (e) => {
             questionEl.innerHTML = "";
             optionsEl.innerHTML = "";
             buttonSectionEl.innerHTML = "";
-            finishEl.innerText = "Your Score";
-            finishEl.classList.add("finish");
-            titleEl.appendChild(finishEl);
-            scoreEl.innerText = score + "/" + QUIZLENGTH;
-            scoreEl.classList.add("score");
-            titleEl.appendChild(scoreEl);
-            quizCompleted();
+            showScore();
             restartButtonEl.innerHTML="Restart";
             restartButtonEl.classList.add("restart");
             buttonSectionEl.appendChild(restartButtonEl);

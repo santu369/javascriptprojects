@@ -8,7 +8,6 @@ const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
 const listEl = document.createElement("ul");
 const buttonSectionEl = document.getElementById("button-section");
-// const submitButtonEl = document.createElement("button");
 const submitButtonEl = document.createElement("input");
 const restartButtonEl = document.createElement("button");
 const finishEl = document.createElement("p");
@@ -76,7 +75,6 @@ function showQuiz(quiz) {
     optionsEl.appendChild(listEl);
     submitButtonEl.type="submit";
     submitButtonEl.classList.add("submit");
-    // submitButtonEl.innerText = "Submit";
     buttonSectionEl.appendChild(submitButtonEl);
     i++;
 }
@@ -100,9 +98,6 @@ submitButtonEl.addEventListener('click', (e) => {
     if (document.querySelector('input[name="option"]:checked')) {
         e.preventDefault();
         let selectedOption = document.querySelector('input[name="option"]:checked').value;
-        // console.log("Question: " + quizData[i-1].question);
-        // console.log("Selected Option: " + selectedOption);
-        // console.log("Correct Option: " + quizData[i-1].correct_answer);
         if(i < 5) {
             if(selectedOption === quizData[i-1].correct_answer) {
                 score++;
@@ -119,7 +114,6 @@ submitButtonEl.addEventListener('click', (e) => {
             restartButtonEl.innerHTML="Restart";
             restartButtonEl.classList.add("restart");
             buttonSectionEl.appendChild(restartButtonEl);
-            // finishEl.innerHTML
         }
     } else {
 

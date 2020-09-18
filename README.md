@@ -8,5 +8,5 @@
   - Timer will change to next year if current year completes
   
 2. Quiz App
-  - Uses API to fetch 5 random questions and options
+  - Uses [Trivia API](https://opentdb.com/api_config.php) to fetch 5 random questions and options
   - Displays your score at the end with restart option

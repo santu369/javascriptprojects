@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Weather App</title>
+</head>
+
+<body>
+    <main>
+        <header>Weather App</header>
+        <form id="form">
+            <input id="user-location" type="text" class="input-location" placeholder="Enter City Name"  required/>
+            <div class="btn-div"><button id="submit" type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></div>
+        </form>
+        <div class="main-info">
+            <h1 id="current-location"></h1>
+            <div class="main">
+                <img id='img' src="" alt="weather icon">
+                <h2><span class="temp" id="temp"></span></h2>
+            </div>
+            <h3>Feels like <span id="feels-like"></span></h3>
+        </div>
+        <div class="other-info">
+            <p>Pressure <span id="pressure"></span></p>
+            <p>Humidity <span id="humidity"></span></p>
+            <ul class="list">
+                <li class="list-item">
+                    <p>Min <span id="min-temp"></span></p>
+                </li>
+                <li class="list-item">
+                    <p>Mix <span id="max-temp"></span></p>
+                </li>
+            </ul>
+        </div>
+        <div id="not-found" class="not-found">
+            <h3 id="not-found-msg"></h3>
+        </div>
+    </main>
+</body>
+
+</html>

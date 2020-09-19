@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400&display=swap');
+
+
+body {
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    background-image: linear-gradient(45deg, #d6dbfd 0%, #c9cffc 74%);
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: rgb(116, 117, 126, 0.4);
+    width: 25rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+}
+
+h1 {
+    margin: 2rem auto;
+    color: rgb(108, 66, 206);
+}
+
+form {
+    width: 100%;
+    display: flex;
+}
+
+.new-todo-item {
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    margin: 0.5rem;
+    border-radius: 0.3rem;
+    flex-grow: 1;
+}
+
+.new-todo-item::placeholder {
+    color: rgba(150, 123, 175, 0.7);
+}
+
+.todo-items {
+    overflow-x: auto;
+}
+
+.todo-item {
+    margin: 0.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: rgba(93, 93, 99, 0.4);
+    padding: 0.6rem;
+}
+
+input[type="checkbox"] {
+    margin: 0 0.7rem;
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+.todo {
+    margin: 0;
+    text-overflow: clip;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    height: 3rem;
+    margin-right: 1.5rem;
+}
+
+.delete-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    right: 3%;
+    font-size: 1.25rem;
+    border: none;
+    background: none;
+    outline: none;
+    margin: -0.35rem;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    color: rgb(50, 50, 168);
+}
+
+.todo-item:hover .delete-button{
+    font-size: 2Rem;
+    margin: -0.5rem;
+    color: rgb(21, 21, 185);
+}
+
+.todo-item:hover {
+    background-color: rgba(44, 44, 71, 0.4);
+}
+
+.item:checked + .todo{
+    text-decoration: line-through;
+}
+
+/* .delete-button:hover + .todo-item{
+    display: none;
+} */

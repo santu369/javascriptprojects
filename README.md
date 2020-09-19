@@ -10,3 +10,7 @@
 2. Quiz App
   - Uses [Trivia API](https://opentdb.com/api_config.php) to fetch 5 random questions and options
   - Displays your score at the end with restart option
+
+3. Todo List App
+  - Add or Delete Items from Todo List
+  - Mark Items as completed

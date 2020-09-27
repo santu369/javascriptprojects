@@ -14,3 +14,7 @@
 3. Todo List App
   - Add or Delete Items from Todo List
   - Mark Items as completed
+
+3. GitHub Profiles App
+  - Uses [GitHub Rest API](https://developer.github.com/v3/)
+  - Search using GitHub Username to get user details and some repository details

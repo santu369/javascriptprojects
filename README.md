@@ -15,6 +15,10 @@
   - Add or Delete Items from Todo List
   - Mark Items as completed
 
-3. GitHub Profiles App
+4. Weather App
+  - Uses [Weather API](https://api.openweathermap.org)
+  - Get weather info using City name
+
+5. GitHub Profiles App
   - Uses [GitHub Rest API](https://developer.github.com/v3/)
   - Search using GitHub Username to get user details and some repository details

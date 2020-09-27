@@ -22,5 +22,3 @@
 <strong>5. GitHub Profiles App</strong>
   - Uses [GitHub Rest API](https://developer.github.com/v3/)
   - Search using GitHub Username to get user details and some repository details
-
-  c

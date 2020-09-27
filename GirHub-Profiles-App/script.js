@@ -30,6 +30,7 @@ submitBtn.addEventListener('click', (e) => {
         inputEl.value = '';
         getUser(username).then((userDetails) => {
             if (userDetails.name) {
+                const userURL = userDetails.blog.startsWith("https://")?userDetails.blog:"https://"+userDetails.blog;
                 mainDetailsSection.innerHTML = `
                 <div class="img-container">
                     <img src=${userDetails.avatar_url} alt="userimage">
@@ -37,7 +38,7 @@ submitBtn.addEventListener('click', (e) => {
                 </div>
                 <div class="details-container">
                     <p><span>Bio: </span>${userDetails.bio}</p>
-                    <p><a href=${userDetails.blog} target="_blank">${userDetails.blog}</a>
+                    <p><a href=${userURL} target="_blank">${userDetails.blog}</a>
                         <label for="hireable">Hireable</label>
                         <input type="checkbox" name="hireable" id="hireable" onclick="return false;" onkeydown="return false;" ${userDetails.hireable ? 'checked' : 'unchecked'}>
                     </p>

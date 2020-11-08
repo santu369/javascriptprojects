@@ -25,5 +25,5 @@
 
   <strong>6. Movies App</strong>
   - Uses [OMDb API](http://www.omdbapi.com/)
-  - Search using movie/series name to get user details 
+  - Search using movie/series name
   - Click on any movie/series to view details

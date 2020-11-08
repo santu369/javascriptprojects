@@ -9,15 +9,15 @@
     <title>Movies App</title>
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <h1>Movies App</h1>
-        <form>
-            <input type="text" name="search" class="search" required placeholder="Search movies" autocomplete="off">
+        <form id="search-form">
+            <input type="text" name="search" class="search" required placeholder="Search movies" value="Flash" autocomplete="off">
             <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
         </form>
     </header>
-    <main>
-        <section>
+    <main id="main" class="main">
+        <!-- <section>
             <div class="img-container">
                 <img src="https://m.media-amazon.com/images/M/MV5BOGU2N2M1YzgtNmE1YS00OGFhLTllMzUtYWU1MDA3NWVmYWYwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg" alt="" height="100%" width="100%">
                 <div class="info-container">
@@ -100,12 +100,13 @@
                     <p class="imdb-rating">Imdb Rating - 6.5</p>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
-    <article>
-        <div class="modal">
+    <article id="article">
+        <!-- <div class="modal">
             <header class="modal-header">
                 <h2>Name: Flash Gordon</h2>
+                <button onclick="closeModal()"><i class="fas fa-times"></i></button>
             </header>
             <div class="modal-container">
                 <div class="modal-text">
@@ -127,7 +128,7 @@
                     <img src="https://m.media-amazon.com/images/M/MV5BOGU2N2M1YzgtNmE1YS00OGFhLTllMzUtYWU1MDA3NWVmYWYwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg" alt="" height="100%" width="100%">
                 </div>
             </div>
-        </div>
+        </div> -->
     </article>
 </body>
 </html>

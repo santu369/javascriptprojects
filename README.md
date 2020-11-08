@@ -22,3 +22,8 @@
 <strong>5. GitHub Profiles App</strong>
   - Uses [GitHub Rest API](https://developer.github.com/v3/)
   - Search using GitHub Username to get user details and some repository details
+
+  <strong>6. Movies App</strong>
+  - Uses [OMDb API](http://www.omdbapi.com/)
+  - Search using movie/series name to get user details 
+  - Click on any movie/series to view details

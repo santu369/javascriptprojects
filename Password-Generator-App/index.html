@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <title>Password Generator App</title>
+</head>
+
+<body>
+    <div class="title">
+        Password Generator App
+    </div>
+    <div class="container">
+        <div class="row">
+            <input id="password" readonly></input>
+            <button class="copy" id="copy">
+                <i class="far fa-copy"></i>
+                <span class="tooltip">Copy</span>
+            </button>
+        </div>
+        <form id="password-form">
+            <label for="length">
+                Password length
+                <input type="number" name="length" id="length" min="8" max="20" required>
+            </label>
+            <label for="upper-alpha">
+                <input type="checkbox" name="upper-alpha" id="upper-alpha">
+                Include uppercase letters
+            </label>
+            <label for="numbers">
+                <input type="checkbox" name="numbers" id="numbers">
+                Include numbers
+            </label>
+            <label for="symbols">
+                <input type="checkbox" name="symbols" id="symbols">
+                Include symbols
+            </label>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>

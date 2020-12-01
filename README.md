@@ -27,3 +27,8 @@
   - Uses [OMDb API](http://www.omdbapi.com/)
   - Search using movie/series name
   - Click on any movie/series to view details
+
+  <strong>7. Password Generator App</strong>
+  - Generates random password
+  - copy password with a click
+  - Uppercase letters, numbers, symbols can be included

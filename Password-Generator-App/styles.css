@@ -52,6 +52,7 @@ form {
 #password {
     outline: none;
     border: none;
+    cursor: default;
 }
 
 input {

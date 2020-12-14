@@ -32,3 +32,8 @@
   - Generates random password
   - copy password with a click
   - Uppercase letters, numbers, symbols can be included
+
+  <strong>8. Drawing App</strong>
+  - Draw on canvas using mouse
+  - Change color, stroke width, reset canvas options are available
+  - Export the drawing as an image

@@ -2,36 +2,88 @@ const todoListEl = document.getElementById('todo-items');
 const newTodoItemEl = document.getElementById('new-todo-item');
 const formEl = document.querySelector('form');
 
-var OldElement = '';
+let todoItems = [];
 
-var deleteId = 0;
+document.addEventListener("DOMContentLoaded", function() {
+    loadFromLS();
+});
+
+function loadFromLS() {
+    let todoItems = getLS();
+    todoListEl.innerHTML = '';
+    if(todoItems) {
+        todoItems.forEach((todoItem) => {
+            addTodo(todoItem);
+        });
+    }
+    newTodoItemEl.focus();
+}
 
 formEl.addEventListener('submit',(e) => {
     e.preventDefault();
-    
-    let todoItem = newTodoItemEl.value;
-    const addItemEl = document.createElement('div');
-    addItemEl.classList.add('todo-item');
-    addItemEl.setAttribute("id", 'del' + deleteId);
-    addItemEl.innerHTML = 
-    `
-    <input type="checkbox" name="check" class="item">
-    <p class="todo">${todoItem}</p>
-    <button class="delete-button" id=${deleteId} onclick="deleteTodo(this.id)"><i class="fas fa-times"></i></button>
-    `;
-    deleteId++;
-    if(OldElement) {
-        todoListEl.insertBefore(addItemEl,OldElement);
-        OldElement = addItemEl;
-    } else {
-        todoListEl.appendChild(addItemEl);
-        OldElement = addItemEl;
+    let todoExists = false;
+    let todoItem = newTodoItemEl.value.trim();
+    todoItems = getLS();
+    for (let i = 0; i < todoItems.length; i++) {
+        if(todoItems[i].todo == todoItem) {
+            newTodoItemEl.value = '';
+            todoExists = true;
+            break;
+        }
     }
-    newTodoItemEl.value = '';
+    if(todoExists) {
+        alert(todoItem + " Todo Item Exists");
+    } else { 
+        addTodo({"todo": todoItem, "status": "unchecked"});
+        newTodoItemEl.value = '';
+        todoItems.push({"todo": todoItem, "status": "unchecked"});
+        setLS();
+    }
 });
 
+function addTodo(todoItem) {
+    const addItemEl = document.createElement('div');
+    addItemEl.classList.add('todo-item');
+    addItemEl.innerHTML = 
+    `
+    <input type="checkbox" class="item" onclick="toggleTodoStatus(this)" ${todoItem.status}>
+    <p class="todo">${todoItem.todo}</p>
+    <button class="delete-button" onclick="deleteTodo(this)"><i class="fas fa-times"></i></button>
+    `;
+    todoListEl.prepend(addItemEl);
+}
+
 function deleteTodo(e) {
-    const deleteTodoEL = document.getElementById('del' + e);
-    deleteTodoEL.remove();
-        OldElement = '';
+    todoItems = getLS();
+    for (let i = 0; i < todoItems.length; i++) {
+        if(todoItems[i].todo == e.previousElementSibling.innerText) {
+            todoItems.splice(i, 1);
+        }
+    }
+    setLS();
+    e.parentNode.remove();
+}
+
+function toggleTodoStatus(e) {
+    todoItems = getLS();
+    for (let i = 0; i < todoItems.length; i++) {
+        if(todoItems[i].todo == e.nextElementSibling.innerText) {
+            if(e.checked) {
+                todoItems[i].status = 'checked';
+                break;
+            } else {
+                todoItems[i].status = 'unchecked';
+                break;
+            }
+        }
+    }
+    setLS();
+}
+
+function setLS() {
+    localStorage.setItem('todoItems', JSON.stringify(todoItems));
+}
+
+function getLS() {
+    return JSON.parse(localStorage.getItem('todoItems'));
 }

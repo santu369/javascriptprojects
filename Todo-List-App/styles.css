@@ -88,10 +88,11 @@ input[type="checkbox"] {
     color: rgb(50, 50, 168);
 }
 
-.todo-item:hover .delete-button{
-    font-size: 2Rem;
+.delete-button:hover{
+    font-size: 2rem;
     margin: -0.5rem;
     color: rgb(21, 21, 185);
+    transform: rotate(90deg);
 }
 
 .todo-item:hover {
@@ -101,7 +102,3 @@ input[type="checkbox"] {
 .item:checked + .todo{
     text-decoration: line-through;
 }
-
-/* .delete-button:hover + .todo-item{
-    display: none;
-} */

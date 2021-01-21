@@ -9,12 +9,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function loadFromLS() {
-    let todoItems = getLS();
+    todoItems = getLS();
     todoListEl.innerHTML = '';
     if(todoItems) {
         todoItems.forEach((todoItem) => {
             addTodo(todoItem);
         });
+    } else {
+        todoItems = []
     }
     newTodoItemEl.focus();
 }
@@ -23,12 +25,13 @@ formEl.addEventListener('submit',(e) => {
     e.preventDefault();
     let todoExists = false;
     let todoItem = newTodoItemEl.value.trim();
-    todoItems = getLS();
-    for (let i = 0; i < todoItems.length; i++) {
-        if(todoItems[i].todo == todoItem) {
-            newTodoItemEl.value = '';
-            todoExists = true;
-            break;
+    if(todoItems) {
+        for (let i = 0; i < todoItems.length; i++) {
+            if(todoItems[i].todo == todoItem) {
+                newTodoItemEl.value = '';
+                todoExists = true;
+                break;
+            }
         }
     }
     if(todoExists) {
@@ -36,6 +39,7 @@ formEl.addEventListener('submit',(e) => {
     } else { 
         addTodo({"todo": todoItem, "status": "unchecked"});
         newTodoItemEl.value = '';
+        console.log(todoItem);
         todoItems.push({"todo": todoItem, "status": "unchecked"});
         setLS();
     }
@@ -54,7 +58,6 @@ function addTodo(todoItem) {
 }
 
 function deleteTodo(e) {
-    todoItems = getLS();
     for (let i = 0; i < todoItems.length; i++) {
         if(todoItems[i].todo == e.previousElementSibling.innerText) {
             todoItems.splice(i, 1);
@@ -65,7 +68,6 @@ function deleteTodo(e) {
 }
 
 function toggleTodoStatus(e) {
-    todoItems = getLS();
     for (let i = 0; i < todoItems.length; i++) {
         if(todoItems[i].todo == e.nextElementSibling.innerText) {
             if(e.checked) {

@@ -1,141 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Rubik', Times, serif;
-    background-image: linear-gradient(#3d485a, #37486d);
-    height: 100vh;
-    padding: 1rem;
+  font-family: "Rubik", Times, serif;
+  background-image: linear-gradient(#3d485a, #37486d);
+  height: 100vh;
+  padding: 1rem;
 }
 
 header {
-    display: flex;
-    flex-wrap: wrap;
-    color: #ecf8ff;
+  display: flex;
+  flex-wrap: wrap;
+  color: #ecf8ff;
 }
 
 header > * {
-    margin: 1rem;
+  margin: 1rem;
 }
 
-.add-note, .preview, .delete, .edit, .save {
-    font-family: 'Rubik', Times, serif;
-    padding: 0.5rem;
-    color: #37486d;
-    background-color: #ffffff;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: 0.2s ease-in;
+.header-buttons,
+.note-buttons {
+  font-family: "Rubik", Times, serif;
+  padding: 0.5rem;
+  color: #37486d;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s ease-in;
 }
 
-.preview, .edit, .save {
-    cursor: pointer;
-    margin-right: 1rem;
+.note-buttons {
+  cursor: pointer;
+  margin: 0.2rem;
+  margin-right: 1rem;
 }
 
-.preview i, .edit i, .delete i, .save i {
-    margin-right: 0.5rem;
+.note-buttons i {
+  margin-right: 0.5rem;
 }
 
-.add-note:hover, .preview:hover, .delete:hover, .edit:hover, .save:hover {
-    color: #ffffff;
-    background-color: #6b8290;
-    font-weight: bold;
-    transform: translate(-10%, 0%);
+.header-buttons:hover,
+.note-buttons:hover {
+  color: #ffffff;
+  background-color: #6b8290;
+  font-weight: bold;
+  transform: translate(-10%, 0%);
 }
 
 .disable {
-    background-color: #adadad;
-    color: #2e2e2e;
+  background-color: #adadad;
+  color: #2e2e2e;
 }
 
 .disable:hover {
-    background-color: #adadad !important;
-    color: #2e2e2e !important;
-    font-weight: normal !important;
-    transform: translate(0%, 0%) !important;
-    cursor: auto;
+  background-color: #adadad !important;
+  color: #2e2e2e !important;
+  font-weight: normal !important;
+  transform: translate(0%, 0%) !important;
+  cursor: not-allowed;
 }
 
-.add-note:active {
-    background-color: #566975;
+.disable:hover i {
+  transform: translate(0%, 0%) !important;
 }
 
-.add-note > * {
-    margin-right: 1rem;   
+.header-buttons:active {
+  background-color: #566975;
 }
 
-.add-note i {
-    transition: 0.2s ease-in;
+.header-buttons > * {
+  margin-right: 1rem;
 }
 
-.add-note:hover i {
-    transform: rotate(180deg) scale(1.2);    
+.header-buttons i {
+  transition: 0.2s ease-in;
+}
+
+.header-buttons:hover i {
+  transform: rotate(360deg) scale(1.2);
 }
 
 .notes {
-    background-color: #acb6ca;
-    margin-top: 1rem;
-    display: grid;
-    /* grid-template-columns: repeat( auto-fill, minmax(19rem, 1fr) ); */
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    /* height: 90%; */
-    border-radius: 5px;
+  background-color: #acb6ca;
+  margin-top: 1rem;
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  border-radius: 5px;
 }
 
 .note {
-    background-color: #5090a7;
-    margin: 0.3rem;
-    padding: 0.3rem;
-    /* overflow: auto; */
-    height: 20rem;
-    border-radius: 5px;
+  background-color: #5090a7;
+  margin: 0.3rem;
+  padding: 0.3rem;
+  height: 20rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .note-header {
-    display: flex;
-    padding: 0.2rem;
-    margin: 0.4rem;
-    justify-content: space-between;
+  display: flex;
+  padding: 0.2rem;
+  margin: 0.4rem;
+  justify-content: space-between;
 }
 
 .note-name {
-    padding: 0.2rem;
-    outline: none;
-    background-color: #77afc5;
-    color: #ffffff;
-    font-size: 1.5rem;
-    border-radius: 5px;
+  padding: 0.2rem;
+  outline: none;
+  background-color: #77afc5;
+  color: #ffffff;
+  font-size: 1.5rem;
+  border-radius: 5px;
 }
 
 .note-name:focus {
-    padding: 0.2rem;
-    outline: none;
-    background-color: #d6eaf1;
-    color: #000000;
+  padding: 0.2rem;
+  outline: none;
+  background-color: #d6eaf1;
+  color: #000000;
 }
 
 .note-content {
-    background-color: white;
-    overflow: auto;
-    height: 80%;
-    margin: 0.4rem;
-    padding: 0.4rem;
-    border-radius: 5px;
+  background-color: white;
+  overflow: auto;
+  height: 80%;
+  margin: 0.4rem;
+  padding: 0.4rem;
+  border-radius: 5px;
 }
 
 .note-content:focus {
-    outline: none;
-    border:none;
+  outline: none;
+  border: none;
 }
 
 .preview-note {
-    background-color: rgba(245, 245, 245, 0.9);
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+.no-notes {
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50vh;
+  font-size: 2rem;
+}
+
+.display-none {
+  display: none;
 }

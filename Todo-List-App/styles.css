@@ -18,7 +18,7 @@ body {
     height: 40rem;
     display: flex;
     flex-direction: column;
-    min-width: 500px;
+    min-width: 120px;
 }
 
 h1 {

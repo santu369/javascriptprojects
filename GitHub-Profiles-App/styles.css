@@ -154,3 +154,7 @@ p.repo {
 h2 {
     margin: 0.5rem;
 }
+
+.details-container p {
+    word-break: break-word;
+}

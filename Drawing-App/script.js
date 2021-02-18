@@ -2,6 +2,14 @@ const formEl = document.forms["options-form"];
 const MIME_TYPE = "image/png";
 
 var canvasEl = document.getElementById("canvas");
+console.log(window);
+if (window.innerWidth > 500) {
+    canvasEl.width = 500;
+    canvasEl.height = 500;
+} else {
+    canvasEl.width = 300;
+    canvasEl.height =  300;
+}
 var context = canvasEl.getContext("2d");
 var rect = canvas.getBoundingClientRect();
 let drawing = false;

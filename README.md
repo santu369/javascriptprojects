@@ -54,4 +54,10 @@
 - Edit or preview notes
 - Implemented local storage for Notes
 
-#### **10. Recipe App**
+#### **10. Recipes App**
+
+- Uses [TheMealDB API](https://www.themealdb.com/api.php)
+- Search using any ingredient
+- Click on any recipe to view details
+- Add/Remove recipes to favorites
+- Implemented local storage for favorite Recipes

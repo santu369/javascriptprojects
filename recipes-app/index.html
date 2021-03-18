@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <script src="script.js" defer></script>
+    <title>Recipes App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sticky-container">
+        <header class="main-header">
+          <h2>Recipes App</h2>
+          <form id="search-form">
+            <input
+              id="search-term"
+              type="text"
+              placeholder="Search by ingredient"
+              required
+            />
+            <button type="submit" class="submit-button">
+              <i class="fas fa-search search-icon"></i>
+            </button>
+          </form>
+        </header>
+        <section class="favs">
+          <h3>Favorite Recipes</h3>
+          <div class="favorites"></div>
+          <!-- <article class="favorite">
+          <div class="fav-recipe" title="Roast fennel and aubergine paella">
+            <img
+              class="fav-img"
+              src="https://www.themealdb.com/images/media/meals/1520081754.jpg"
+              alt="Roast fennel and aubergine paella"
+            />
+            <p class="fav-title">Roast...</p>
+          </div>
+        </article>
+        <article class="favorite">
+          <div class="fav-recipe" title="Roast fennel and aubergine paella">
+            <img
+              class="fav-img"
+              src="https://www.themealdb.com/images/media/meals/1520081754.jpg"
+              alt="Roast fennel and aubergine paella"
+            />
+            <p class="fav-title">Roast...</p>
+          </div>
+        </article>
+        <article class="favorite">
+          <div class="fav-recipe" title="Roast fennel and aubergine paella">
+            <img
+              class="fav-img"
+              src="https://www.themealdb.com/images/media/meals/1520081754.jpg"
+              alt="Roast fennel and aubergine paella"
+            />
+            <p class="fav-title">Roast...</p>
+          </div>
+        </article>
+        <article class="favorite">
+          <div class="fav-recipe" title="Roast fennel and aubergine paella">
+            <img
+              class="fav-img"
+              src="https://www.themealdb.com/images/media/meals/1520081754.jpg"
+              alt="Roast fennel and aubergine paella"
+            />
+            <p class="fav-title">Roast...</p>
+          </div>
+        </article> -->
+        </section>
+      </div>
+      <section class="recipe-cards">
+        <!-- <article class="recipe-card" onclick="showModal()">
+          <strong class="recipe-tag">Spanish</strong>
+          <img
+            class="recipe-img"
+            src="https://www.themealdb.com/images/media/meals/1525872624.jpg"
+            alt="Roast fennel and aubergine paella"
+          />
+          <div class="recipe-desc">
+            <h4 class="recipe-title">Kung Pao Chicken</h4>
+            <div title="Add/Remove favorite">
+              <i
+                id="52915-heart"
+                class="far fa-heart heart-icon"
+                onClick="favToggle(52915)"
+              ></i>
+            </div>
+          </div>
+        </article> -->
+      </section>
+      <div class="overlay hide-modal" id="modal-overlay">
+        <!-- <div class="modal">
+          <header class="modal-header">
+            <h2>Chicken Marengo</h2>
+            <i
+              class="fas fa-times modal-times-icon"
+              onclick="toggleModal()"
+            ></i>
+          </header>
+          <div class="main-details">
+            <div class="img-container">
+              <img
+                src="https://www.themealdb.com/images/media/meals/qpxvuq1511798906.jpg"
+                alt="Chicken Marengo"
+              />
+            </div>
+            <div class="links">
+              <h3>French | Chicken</h3>
+              <a
+                href="https://www.bbcgoodfood.com/recipes/3146682/chicken-marengo"
+                target="_blank"
+              >
+                Visit Source
+              </a>
+              <a
+                href="https://www.youtube.com/watch?v=U33HYUr-0Fw"
+                target="_blank"
+              >
+                Watch Video on Youtube
+              </a>
+            </div>
+          </div>
+          <div class="ingredients-header">
+            <h3>Ingredients</h3>
+            <i
+              class="fa fa-angle-down down-icon"
+              id="down-icon"
+              aria-hidden="true"
+              onclick="toggleIngredients()"
+              title="Toggle Ingredients"
+            ></i>
+          </div>
+          <div class="ingredients" id="ingredients">
+            <section class="list-1">
+              <ul>
+                <li>Olive Oil: 1 tbs</li>
+                <li>Mushrooms: 300g</li>
+                <li>Chicken Legs: 4</li>
+                <li>Passata: 500g</li>
+                <li>Chicken Stock Cube: 1</li>
+                <li>Olive Oil: 1 tbs</li>
+                <li>Mushrooms: 300g</li>
+                <li>Chicken Legs: 4</li>
+                <li>Passata: 500g</li>
+                <li>Chicken Stock Cube: 1</li>
+              </ul>
+            </section>
+            <section class="list-2">
+              <ul>
+                <li>Olive Oil: <b>1 tbs</b></li>
+                <li>Mushrooms: <b>300g</b></li>
+                <li>Chicken Legs: 4</li>
+                <li>Passata: 500g</li>
+                <li>Chicken Stock Cube: 1</li>
+                <li>Olive Oil: 1 tbs</li>
+                <li>Mushrooms: 300g</li>
+                <li>Chicken Legs: 4</li>
+                <li>Passata: 500g</li>
+                <li>Chicken Stock Cube: 1</li>
+              </ul>
+            </section>
+          </div>
+          <h3>Instructions</h3>
+          <article class="instructions">
+            <p>
+              Heat the oil in a large flameproof casserole dish and stir-fry the
+              mushrooms until they start to soften. Add the chicken legs and
+              cook briefly on each side to colour them a little. Pour in the
+              passata, crumble in the stock cube and stir in the olives. Season
+              with black pepper – you shouldn’t need salt. Cover and simmer for
+              40 mins until the chicken is tender. Sprinkle with parsley and
+              serve with pasta and a salad, or mash and green veg, if you like.
+            </p>
+          </article>
+        </div> -->
+      </div>
+    </div>
+  </body>
+</html>

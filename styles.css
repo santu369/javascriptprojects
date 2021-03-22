@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400&display=swap");
+
+:root {
+  --body-color: #adcabf; /*82c0a8*/
+  --card-front-color: #63326e;
+  --card-back-header-color: #82c0a8;
+  --card-back-color: #474b24;
+  --text-color1: #000;
+  --text-color2: #fff;
+  --gray-color: #999;
+  --anchor-color: #58dba9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", Times, serif;
+  padding: 10px;
+  background-color: var(--body-color);
+  color: var(--text-color1);
+}
+
+/* .cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */
+header h1 {
+  margin: 10px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.card-container {
+  height: 400px;
+  min-width: 90%;
+  width: 300px;
+  perspective: 1000px;
+  margin: 10px;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--text-color2);
+  border-radius: 10px;
+  box-shadow: 0 0 15px 1px var(--gray-color);
+}
+
+.card-front {
+  background-color: var(--card-front-color);
+  justify-content: center;
+  transition: all 1s ease;
+  pointer-events: none;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: var(--card-back-color);
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-back header {
+  position: relative;
+  padding: 50px;
+  width: 100%;
+  background-color: var(--card-back-header-color);
+  color: var(--text-color1);
+  transform: skewY(-3deg);
+  top: -15px;
+}
+
+.card-back header h3 {
+  position: absolute;
+  transform: skewY(3deg);
+}
+
+.card-back ul {
+  margin: 20px 10px;
+  list-style-type: none;
+  text-align: left;
+}
+
+.card-back ul li {
+  border-bottom: 2px solid var(--gray-color);
+  padding: 10px 0;
+}
+
+.card-back ul li a {
+  color: var(--anchor-color);
+  /* text-decoration: none; */
+  font-weight: bold;
+}
+
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}

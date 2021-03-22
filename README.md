@@ -1,4 +1,4 @@
-# 10Projects
+# Javascript Projects
 
 ## Inspiration for doing these projects - [Florin Pop](https://github.com/florinpop17)
 

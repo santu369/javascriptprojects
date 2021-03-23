@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400&display=swap");
 
 :root {
-  --body-color: #adcabf; /*82c0a8*/
+  --body-color: #adcabf;
   --card-front-color: #63326e;
   --card-back-header-color: #82c0a8;
   --card-back-color: #474b24;
-  --text-color1: #000;
-  --text-color2: #fff;
+  --black-color: #000;
+  --white-color: #fff;
   --gray-color: #999;
   --anchor-color: #58dba9;
 }
@@ -21,7 +21,7 @@ body {
   font-family: "Rubik", Times, serif;
   padding: 10px;
   background-color: var(--body-color);
-  color: var(--text-color1);
+  color: var(--black-color);
 }
 
 /* .cards {
@@ -29,6 +29,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
 } */
+
 header h1 {
   margin: 10px 0;
 }
@@ -65,7 +66,7 @@ header h1 {
   width: 100%;
   display: flex;
   align-items: center;
-  color: var(--text-color2);
+  color: var(--white-color);
   border-radius: 10px;
   box-shadow: 0 0 15px 1px var(--gray-color);
 }
@@ -95,7 +96,7 @@ header h1 {
   padding: 50px;
   width: 100%;
   background-color: var(--card-back-header-color);
-  color: var(--text-color1);
+  color: var(--black-color);
   transform: skewY(-3deg);
   top: -15px;
 }
@@ -118,28 +119,27 @@ header h1 {
 
 .card-back ul li a {
   color: var(--anchor-color);
-  /* text-decoration: none; */
   font-weight: bold;
 }
 
 .card-back > a {
   position: absolute;
   bottom: 20px;
-  color: var(--text-color1);
+  color: var(--black-color);
   font-size: 1.25rem;
   text-decoration: none;
   padding: 3px 5px;
-  background-color: var(--text-color2);
-  border: 2px solid var(--text-color2);
+  background-color: var(--white-color);
+  border: 2px solid var(--white-color);
   transition: all 0.2s ease;
   border-radius: 3px;
-  box-shadow: 0 0 10px 2px var(--text-color2);
+  box-shadow: 0 0 10px 2px var(--white-color);
 }
 
 .card-back > a:hover {
   background-color: var(--card-back-header-color);
   border: 2px solid var(--card-back-header-color);
-  box-shadow: 0 0 2px 1px var(--text-color2);
+  box-shadow: 0 0 2px 1px var(--white-color);
   transform: scale(1.15);
 }
 
@@ -176,7 +176,7 @@ footer ul li a i {
 footer ul li a:hover i {
   transform: scale(1.2);
   background-color: var(--card-front-color);
-  color: var(--text-color2);
+  color: var(--white-color);
 }
 
 .card-container:hover .card {

@@ -17,6 +17,23 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cfc0d4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #73517a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #63326e;
+}
+
 body {
   font-family: "Rubik", Times, serif;
   padding: 10px;

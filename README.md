@@ -32,7 +32,7 @@
 
 #### **6. Movies App**
 
-- Uses [OMDb API](http://www.omdbapi.com/)
+- Uses [OMDb API](https://www.omdbapi.com/)
 - Search using movie/series name
 - Click on any movie/series to view details
 
